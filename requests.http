@@ -1,0 +1,16 @@
+### Products Index
+GET http://localhost:3000/products
+
+### Products Show
+GET http://localhost:3000/products/1
+
+### Products Post
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "Potato Chips",
+  "price": 3,
+  "image_url": "https://images.app.goo.gl/vFcQ6qxAyfXvKiyr6",
+  "description": "Crunchy Potato Chips"
+}
