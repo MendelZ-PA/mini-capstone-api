@@ -14,3 +14,6 @@ Content-Type: application/json
   "image_url": "https://images.app.goo.gl/vFcQ6qxAyfXvKiyr6",
   "description": "Crunchy Potato Chips"
 }
+
+### Products Update
+PATCH localhost:3000/products/1.json
