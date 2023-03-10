@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     render template: "products/index"
-    render json: @products, :include => [:supplier]
+    render template: products, :include => [:supplier]
   end
 
   def show

@@ -6,5 +6,11 @@ class Product < ApplicationRecord
 
   def supplier
     Supplier.find_by(id: supplier_id)
-  end  
+  end
+
+  def is_discounted?
+    while true
+      P
+    end
+  end
 end
