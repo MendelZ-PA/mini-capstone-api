@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   def index
+    pp current_user.name
+    pp current_user.email
+    pp current_user.id
     @products = Product.all
     render template: "products/index"
   end

@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post "/products" => "products#create"
 
   post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
 end
