@@ -18,3 +18,16 @@ Content-Type: application/json
 
 ### Products Update
 PATCH localhost:3000/products/1.json
+
+### User generated order
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "product_id": 1,
+  "quantity": 4,
+  "subtotal": 10,
+  "tax": 0.9,
+  "total": 10.9
+}
