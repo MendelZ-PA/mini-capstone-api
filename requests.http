@@ -1,24 +1,29 @@
 ### Products Index
 GET http://localhost:3000/products
-Authorization: Bearer 
 
 ### Products Show
 GET http://localhost:3000/products/1
 
-### Products Post
+### Products Create
 POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
   "name": "Potato Chips",
   "price": 3,
-  "image_url": "https://images.app.goo.gl/vFcQ6qxAyfXvKiyr6",
-  "description": "Crunchy Potato Chips"
+  "description": "Crunchy Potato Chips",
+  "inventory": 50,
+  "supplier_id": 4,
+  "image_url": 
 }
 
 ### Products Update
 PATCH localhost:3000/products/1.json
-
+{
+  "price": 10
+}
+### Product Destroy
+DELETE http://lo
 ### User generated order
 POST http://localhost:3000/orders.json
 Content-Type: application/json

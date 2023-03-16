@@ -1,19 +1,36 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
+  def index
+    @orders = current_user.orders
+    render template: "orders/index"
+  end
+
+  def show
+    order_id = params[:id]
+    @order = current_user.orders.find_by(id: order_id)
+    render template: "orders/show"
+  end
+
   def create
+    product = Product.find_by(id: params[:product_id])
+
+    subtotal = product.price * params[:quantity].to_i
+    tax = subtotal * 0.09
+    total = subtotal + tax
+
     @order = Order.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      subtotal: params[:subtotal],
-      tax: params[:tax],
-      total: params[:total],
+      subtotal: subtotal,
+      tax: tax,
+      total: total,
     )
     if @order.save
-      # happy_path (ie successful)
-      render json: { message: "order created" }
+      render template: "orders/show"
     else
-      # sad_path (ie unsuccessful)
-      render json: { errors: @order.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @order.errors.full_messages }, status: 422
     end
   end
 end
