@@ -7,14 +7,14 @@ GET http://localhost:3000/products/1
 ### Products Create
 POST http://localhost:3000/products.json
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkxMDgxNjJ9.R7D5bsSHSmAWcMpvr3EvOPPdsJPy1PBVhlMj_6Rv5rY
 
 {
   "name": "Potato Chips",
   "price": 3,
   "description": "Crunchy Potato Chips",
   "inventory": 50,
-  "supplier_id": 4,
-  "image_url": 
+  "supplier_id": 1
 }
 
 ### Products Update
@@ -35,4 +35,64 @@ Content-Type: application/json
   "subtotal": 10,
   "tax": 0.9,
   "total": 10.9
+}
+
+### User Create (Signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "MMZ",
+  "email": "MMZ@test.com",
+  "password": "password",
+  "password_confirmation": "password",
+  "admin": true
+}
+
+### Session Create (Login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "MMZ@test.com",
+  "password": "password"
+}
+
+### User Create (Signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Katherine",
+  "email": "katherine987@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Session Create (Login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "katherine@test.com",
+  "password": "password"
+}
+
+### Order Index
+GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkxMDgxNjJ9.R7D5bsSHSmAWcMpvr3EvOPPdsJPy1PBVhlMj_6Rv5rY
+
+### Order Show
+GET http://localhost:3000/orders/1.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkxMDgxNjJ9.R7D5bsSHSmAWcMpvr3EvOPPdsJPy1PBVhlMj_6Rv5rY
+
+
+### Order Create
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkxMDgxNjJ9.R7D5bsSHSmAWcMpvr3EvOPPdsJPy1PBVhlMj_6Rv5rY
+
+{
+  "product_id": 3, 
+  "quantity": 1
 }
