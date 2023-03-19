@@ -63,8 +63,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "Katherine",
-  "email": "katherine987@test.com",
+  "name": "MMZ",
+  "email": "mmz@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -74,7 +74,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "katherine@test.com",
+  "email": "mmz@test.com",
   "password": "password"
 }
 
@@ -95,4 +95,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkxMDgxN
 {
   "product_id": 3, 
   "quantity": 1
+}
+### Carted_Products Create
+POST http://localhost:3000/carted_products.json
+Content-Type: application/json
+
+{ 
+  "user_id": 1,
+  "product_id": 1,
+  "quantity": 10,
+  "status": "carted",
+  "order_id": 1
 }
